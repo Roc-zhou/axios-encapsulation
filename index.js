@@ -123,15 +123,7 @@ export const $api = (url, params) => {
  * @param {*} params
  */
 export const $http = (url, params) => {
-  return new Promise((res, rej) => {
-    instance.post(url, params)
-      .then(data => {
-        res(data)
-      })
-      .catch(error => {
-        rej(error)
-      });
-  })
+  return instance.post(url, params)
 }
 
 /**
@@ -141,15 +133,7 @@ export const $http = (url, params) => {
  * @param {*} params
  */
 export const $delete = (url, params) => {
-  return new Promise((res, rej) => {
-    instance.post(url, {
+  return instance.post(url, {
       params: params
-    })
-      .then(data => {
-        res(data)
-      })
-      .catch(error => {
-        rej(error)
-      });
   })
 }
